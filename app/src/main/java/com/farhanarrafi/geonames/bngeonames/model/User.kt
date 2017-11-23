@@ -1,4 +1,4 @@
-package com.farhanarrafi.geonames.bngeonames
+package com.farhanarrafi.geonames.bngeonames.model
 
 /**
  * Created by bjit on 11/22/17.

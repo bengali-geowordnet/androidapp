@@ -5,15 +5,20 @@
     <string name="phone">Phone</string>
     <string name="register">Register</string>
     <string name="title_activity_data_push">DataPushActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="tab_text_3">Tab 3</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-    <string name="appinfo">AppInfo</string>
-    <string name="userinfo">UserInfo</string>
-    <string name="pushdata">Data</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="application_name">Application Name</string>
+    <string name="application_type">Application Type</string>
+    <string name="dev_email">Developer Email</string>
+    <string name="register_user">Register User</string>
+    <string name="register_app">Register App</string>
+    <string name="user_name">User Name</string>
+    <string name="send_data">Send Data</string>
+    <string name="user_key">User Key</string>
+    <string name="app_key">App Key</string>
+    <string name="location_name">Location Name</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
 </resources>

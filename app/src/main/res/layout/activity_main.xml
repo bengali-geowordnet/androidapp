@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_email"
+        android:id="@+id/tv_type"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
         android:layout_marginRight="8dp"
@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/et_type"
         android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
         android:layout_marginEnd="8dp"
@@ -49,11 +49,11 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_email"
+        app:layout_constraintStart_toEndOf="@+id/tv_type"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
     <TextView
-        android:id="@+id/tv_phone"
+        android:id="@+id/tv_email"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
         android:layout_marginRight="8dp"
@@ -62,10 +62,10 @@
         android:text="@string/phone"
         android:textAlignment="gravity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
     <EditText
-        android:id="@+id/et_phone"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
         android:layout_marginEnd="8dp"
@@ -73,8 +73,8 @@
         android:hint="@string/phone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_phone"
-        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+        app:layout_constraintStart_toEndOf="@+id/tv_email"
+        app:layout_constraintTop_toBottomOf="@+id/et_type" />
 
     <Button
         android:id="@+id/button"

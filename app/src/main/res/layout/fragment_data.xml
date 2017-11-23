@@ -1,13 +1,198 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.farhanarrafi.geonames.bngeonames.fragments.DataFragment">
+    android:orientation="vertical"
+    android:padding="10dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv_app_name"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginRight="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/user_key"
+        android:textAlignment="gravity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/et_app_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:gravity="center|center_vertical"
+        android:hint="@string/user_key"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_app_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_app_type"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/app_key"
+        android:textAlignment="gravity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_app_name" />
+
+    <TextView
+        android:id="@+id/et_app_type"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|center_vertical"
+        android:text="@string/app_key"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_app_type"
+        app:layout_constraintTop_toBottomOf="@+id/et_app_name" />
+
+    <TextView
+        android:id="@+id/tv_data_name"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/location_name"
+        android:textAlignment="gravity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_app_type" />
+
+    <EditText
+        android:id="@+id/et_data_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/editText_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/location_name"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_app_type" />
+
+    <TextView
+        android:id="@+id/tv_data_longitude"
+        android:layout_width="79dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/longitude"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_longitude"
+        app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/et_data_longitude"
+        android:layout_width="73dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|center_vertical"
+        android:text="@string/longitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/tv_data_latitude"
+        android:layout_width="87dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/latitude"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_latitude"
+        app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/et_data_latitude"
+        android:layout_width="93dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|center_vertical"
+        android:hint="@string/latitude"
+        android:text="@string/latitude"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data_longitude"
+        app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="@string/register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_horizontal"
+        android:text=""
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Generated Token HASH" />
+
+    <TextView
+        android:id="@+id/tv_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Generated Token"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="Token" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="261dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="118dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="158dp" />
+
+</android.support.constraint.ConstraintLayout>
+

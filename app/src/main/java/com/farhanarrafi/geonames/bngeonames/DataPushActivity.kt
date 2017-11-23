@@ -1,18 +1,17 @@
 package com.farhanarrafi.geonames.bngeonames
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.view.*
+import android.view.Menu
+import android.view.MenuItem
 import com.farhanarrafi.geonames.bngeonames.fragments.AppInfoFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.DataFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.UserInfoFragment
 import kotlinx.android.synthetic.main.activity_data_push.*
-import kotlinx.android.synthetic.main.fragment_data_push.view.*
 
 class DataPushActivity : AppCompatActivity() {
 
@@ -21,7 +20,10 @@ class DataPushActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_push)
+        initialize()
+    }
 
+    private fun initialize(){
         setSupportActionBar(toolbar)
         mSectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
 
@@ -29,12 +31,6 @@ class DataPushActivity : AppCompatActivity() {
 
         container.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
         tabs.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(container))
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-
     }
 
 
@@ -61,55 +57,11 @@ class DataPushActivity : AppCompatActivity() {
                 else -> {
                 }
             }
-            return PlaceholderFragment.newInstance(position + 1)
-        }
-
-        override fun getPageTitle(position: Int): CharSequence {
-            when (position) {
-                0 -> return getString(R.string.appinfo)
-                1 -> return getString(R.string.userinfo)
-                2 -> return getString(R.string.pushdata)
-                else -> {
-                }
-            }
-            return ""
+            return Fragment()
         }
 
         override fun getCount(): Int {
             return 3
-        }
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    class PlaceholderFragment : Fragment() {
-
-        override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                                  savedInstanceState: Bundle?): View? {
-            val rootView = inflater.inflate(R.layout.fragment_data_push, container, false)
-            rootView.section_label.text = getString(R.string.section_format, arguments.getInt(ARG_SECTION_NUMBER))
-            return rootView
-        }
-
-        companion object {
-            /**
-             * The fragment argument representing the section number for this
-             * fragment.
-             */
-            private val ARG_SECTION_NUMBER = "section_number"
-
-            /**
-             * Returns a new instance of this fragment for the given section
-             * number.
-             */
-            fun newInstance(sectionNumber: Int): PlaceholderFragment {
-                val fragment = PlaceholderFragment()
-                val args = Bundle()
-                args.putInt(ARG_SECTION_NUMBER, sectionNumber)
-                fragment.arguments = args
-                return fragment
-            }
         }
     }
 }
