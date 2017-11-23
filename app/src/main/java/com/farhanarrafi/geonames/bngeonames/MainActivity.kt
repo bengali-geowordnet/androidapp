@@ -11,7 +11,7 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
-    public val JSON: MediaType = MediaType.parse("application/json; charset=utf-8")
+    public val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
     val client = OkHttpClient()
     var url = "https://requestb.in/12mmaip1"
 
