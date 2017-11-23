@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:padding="10dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
-        android:textAlignment="gravity"
+        android:layout_marginRight="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/name"
+        android:textAlignment="gravity"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/et_name"
-        android:layout_width="@dimen/editText_width"
+        android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
-        android:inputType="textPersonName"
+        android:layout_marginEnd="8dp"
         android:hint="@string/name"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_name"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,6 +32,7 @@
         android:id="@+id/tv_email"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/email"
@@ -41,11 +42,12 @@
 
     <EditText
         android:id="@+id/et_email"
-        android:layout_width="@dimen/editText_width"
+        android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
-        android:inputType="textEmailAddress"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:hint="@string/email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tv_email"
         app:layout_constraintTop_toBottomOf="@+id/et_name" />
@@ -54,25 +56,24 @@
         android:id="@+id/tv_phone"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
-        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/phone"
         android:textAlignment="gravity"
-        app:layout_constraintEnd_toStartOf="@+id/et_phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_email" />
 
     <EditText
         android:id="@+id/et_phone"
-        android:layout_width="@dimen/editText_width"
+        android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
         android:hint="@string/phone"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_phone"
         app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
     <Button
@@ -80,11 +81,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:onClick="sendRequest"
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
