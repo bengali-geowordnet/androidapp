@@ -15,6 +15,6 @@ public class Application{
     }
 
     fun getJSON(): String {
-        return "{'name' : $name, 'email' : $email, 'phone' : $type }"
+        return "{'name' : $name, 'email' : $email, 'type' : $type }"
     }
 }

@@ -7,10 +7,90 @@
     android:padding="10dp">
 
     <TextView
+        android:id="@+id/tv_data_name2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/location_type"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_name2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <EditText
+        android:id="@+id/et_data_name2"
+        android:layout_width="266dp"
+        android:layout_height="@dimen/editText_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/location_type"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/tv_data_altitude"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/altitude"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_altiutde"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/et_data_altiutde"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|center_vertical"
+        android:hint="@string/latitude"
+        android:text="@string/altitude"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data_elevation"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_altitude"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/tv_data_elevation"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/elevation"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_elevation"
+        app:layout_constraintStart_toEndOf="@+id/et_data_altiutde"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/et_data_elevation"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center|center_vertical"
+        android:text="@string/elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_elevation"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
         android:id="@+id/tv_app_name"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/user_key"
         android:textAlignment="gravity"
@@ -22,6 +102,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:gravity="center|center_vertical"
         android:hint="@string/user_key"
         android:textAlignment="gravity"
@@ -33,7 +114,7 @@
         android:id="@+id/tv_app_type"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/app_key"
@@ -46,6 +127,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:text="@string/app_key"
@@ -58,7 +140,7 @@
         android:id="@+id/tv_data_name"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/location_name"
@@ -71,6 +153,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/editText_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:hint="@string/location_name"
         android:inputType="text"
@@ -80,34 +163,39 @@
 
     <TextView
         android:id="@+id/tv_data_longitude"
-        android:layout_width="79dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/longitude"
         android:textAlignment="gravity"
         app:layout_constraintEnd_toStartOf="@+id/et_data_longitude"
         app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintStart_toEndOf="@+id/et_data_latitude"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/et_data_longitude"
-        android:layout_width="73dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:text="@string/longitude"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_longitude"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/tv_data_latitude"
-        android:layout_width="87dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/latitude"
@@ -119,15 +207,17 @@
 
     <TextView
         android:id="@+id/et_data_latitude"
-        android:layout_width="93dp"
+        android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:hint="@string/latitude"
         android:text="@string/latitude"
         app:layout_constraintEnd_toStartOf="@+id/tv_data_longitude"
         app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_latitude"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
@@ -141,58 +231,44 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:id="@+id/tv_data_result"
+        android:layout_width="200dp"
+        android:layout_height="17dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:gravity="center_horizontal"
-        android:text=""
-        android:textIsSelectable="true"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Generated Token HASH" />
-
-    <TextView
-        android:id="@+id/tv_token"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Generated Token"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="1.0"
-        tools:text="Token" />
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="261dp" />
+        app:layout_constraintGuide_begin="270dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="118dp" />
+        app:layout_constraintGuide_begin="124dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="158dp" />
+        app:layout_constraintGuide_begin="163dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="283dp" />
 
 </android.support.constraint.ConstraintLayout>
 

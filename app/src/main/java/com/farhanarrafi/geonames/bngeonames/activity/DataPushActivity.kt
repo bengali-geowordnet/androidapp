@@ -1,5 +1,6 @@
-package com.farhanarrafi.geonames.bngeonames
+package com.farhanarrafi.geonames.bngeonames.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.fragments.AppInfoFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.DataFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.UserInfoFragment
@@ -42,9 +44,10 @@ class DataPushActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         if (id == R.id.action_settings) {
-            return true
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
-        return super.onOptionsItemSelected(item)
+        return true
     }
 
     inner class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {

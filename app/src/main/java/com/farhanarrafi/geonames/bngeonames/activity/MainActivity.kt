@@ -1,9 +1,10 @@
-package com.farhanarrafi.geonames.bngeonames
+package com.farhanarrafi.geonames.bngeonames.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
+import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.User
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
@@ -11,7 +12,7 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
-    public val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
+    val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
     val client = OkHttpClient()
     var url = "https://requestb.in/12mmaip1"
 
