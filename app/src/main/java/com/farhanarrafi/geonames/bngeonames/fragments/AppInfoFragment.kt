@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.farhanarrafi.geonames.bngeonames.Constants
+import com.farhanarrafi.geonames.bngeonames.Preferences
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.Application
 import kotlinx.android.synthetic.main.fragment_app_info.view.*
@@ -16,12 +18,14 @@ import java.io.IOException
 class AppInfoFragment : Fragment() {
     val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
     val client = OkHttpClient()
-    var url = "https://requestb.in/xh399lxh"
+    var url: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
         }
+        url = Preferences.getSharedPrefrences(context,Constants.SERVER_LIST,
+                Constants.DEFAULT_SERVER_URL) + Constants.APP_URL
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,

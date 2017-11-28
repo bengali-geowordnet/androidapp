@@ -32,24 +32,20 @@
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
+    <string name="pref_title_use_real_location">Use GPS to obtain location info</string>
+    <string name="pref_description_use_real_location">
+        Please enable it only if you are under open sky, where GPS is available.
     </string>
 
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
 
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
+    <string name="select_server_for_testing">Select server for testing application</string>
+    <string-array name="pref_server_address_titles">
+        <item>http://127.0.0.1:8899</item>
+        <item>http://geocrowdsource-geosource.193b.starter-ca-central-1.openshiftapps.com</item>
     </string-array>
-    <string-array name="pref_example_list_values">
+    <string-array name="pref_server_address_values">
         <item>1</item>
-        <item>0</item>
-        <item>-1</item>
+        <item>2</item>
     </string-array>
 
     <!-- Example settings for Data & Sync -->
@@ -98,4 +94,9 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="location_access_rationale">Location access is required to get longitude and latitude.</string>
+    <string name="ok">OK</string>
+    <string name="requesting_location_permission">Permission is not available. Requesting Location permission.</string>
+    <string name="location_persmission_granted">Location permission was granted.</string>
+    <string name="location_permission_denied">Location Permission was denied. Using dummy location data.</string>
 </resources>
