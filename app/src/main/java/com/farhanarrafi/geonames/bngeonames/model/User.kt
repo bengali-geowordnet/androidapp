@@ -1,8 +1,5 @@
 package com.farhanarrafi.geonames.bngeonames.model
 
-/**
- * Created by bjit on 11/22/17.
- */
 
 public class User{
     var name: String = ""

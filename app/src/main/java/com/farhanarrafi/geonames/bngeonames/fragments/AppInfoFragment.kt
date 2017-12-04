@@ -48,6 +48,7 @@ class AppInfoFragment : Fragment() {
         var body: RequestBody = RequestBody.create(JSON, json)
         var request: Request = Request.Builder()
                 .url(url)
+                .addHeader("Content-type","application/json")
                 .post(body)
                 .build()
 
@@ -73,7 +74,7 @@ class AppInfoFragment : Fragment() {
 
         override fun onResponse(call: Call?, response: Response?) {
             Log.d("POST", response.toString())
-            Snackbar.make(view!!, "response.toString()", Snackbar.LENGTH_SHORT)
+            Snackbar.make(view!!, response.toString(), Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show()
         }
     }

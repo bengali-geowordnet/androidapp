@@ -4,10 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 
 
-
-/**
- * Created by bjit on 11/27/17.
- */
 class Preferences(){
 
     companion object {

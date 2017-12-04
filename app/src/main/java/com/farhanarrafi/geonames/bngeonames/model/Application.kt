@@ -1,8 +1,6 @@
 package com.farhanarrafi.geonames.bngeonames.model
 
-/**
- * Created by bjit on 11/23/17.
- */
+
 public class Application{
     private var name: String = ""
     private var email: String = ""
