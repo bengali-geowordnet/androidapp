@@ -1,7 +1,7 @@
 package com.farhanarrafi.geonames.bngeonames.model
 
 
-public class Application{
+class Application{
     private var name: String = ""
     private var email: String = ""
     private var type: String = ""
@@ -12,7 +12,4 @@ public class Application{
         this.type = type
     }
 
-    fun getJSON(): String {
-        return "{'name' : $name, 'email' : $email, 'type' : $type }"
-    }
 }

@@ -1,58 +1,54 @@
 package com.farhanarrafi.geonames.bngeonames.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.farhanarrafi.geonames.bngeonames.Constants
-import com.farhanarrafi.geonames.bngeonames.Preferences
-import com.farhanarrafi.geonames.bngeonames.R
+import android.widget.TextView
+import com.farhanarrafi.geonames.bngeonames.*
 import com.farhanarrafi.geonames.bngeonames.model.Application
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_app_info.view.*
-import okhttp3.*
-import java.io.IOException
 
-class AppInfoFragment : Fragment() {
-    val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
-    val client = OkHttpClient()
+
+class AppInfoFragment : Fragment(), ResponseCallback {
     var url: String = ""
+    lateinit var tvToken: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
         }
-        url = Preferences.getSharedPrefrences(context,Constants.SERVER_LIST,
+        url = Preferences.get(context, Constants.SERVER_LIST,
                 Constants.DEFAULT_SERVER_URL) + Constants.APP_URL
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        val view :View = inflater!!.inflate(R.layout.fragment_app_info, container, false)
+        val view: View = inflater!!.inflate(R.layout.fragment_app_info, container, false)
 
-        view.button.text = getString(R.string.register_app)
+        view.app_register_button.text = getString(R.string.register_app)
+        tvToken = view.tv_app_token
+        view.app_register_button.setOnClickListener {
 
-        view.button.setOnClickListener {
-
-            var application = Application(view.et_app_name.text.toString(),
-                    view.et_app_email.text.toString(),view.et_app_type.text.toString())
-            post(url, application.getJSON())
-
+            val application = Application(view.et_app_name.text.toString(),
+                    view.et_app_email.text.toString(), view.et_app_type.text.toString())
+            Utils.requestTokenFromServer(url, Gson().toJson(application), this)
         }
         return view
     }
 
-    fun post(url: String, json: String) {
-        var body: RequestBody = RequestBody.create(JSON, json)
-        var request: Request = Request.Builder()
-                .url(url)
-                .addHeader("Content-type","application/json")
-                .post(body)
-                .build()
-
-        client.newCall(request).enqueue(callback);
+    override fun setToken(token: String) {
+        Preferences.set(context, "APP_KEY", token)
+        Handler(Looper.getMainLooper()).post({
+            tvToken.text = token
+        })
+        Snackbar.make(view!!, token, Snackbar.LENGTH_SHORT)
+                .setAction("Action", null).show()
     }
 
     companion object {
@@ -64,18 +60,6 @@ class AppInfoFragment : Fragment() {
             val args = Bundle()
             fragment.arguments = args
             return fragment
-        }
-    }
-
-    var callback: Callback = object : Callback {
-        override fun onFailure(call: Call?, e: IOException) {
-            e.printStackTrace()
-        }
-
-        override fun onResponse(call: Call?, response: Response?) {
-            Log.d("POST", response.toString())
-            Snackbar.make(view!!, response.toString(), Snackbar.LENGTH_SHORT)
-                    .setAction("Action", null).show()
         }
     }
 }

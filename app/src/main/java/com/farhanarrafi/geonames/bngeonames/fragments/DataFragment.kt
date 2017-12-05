@@ -12,6 +12,7 @@ import com.farhanarrafi.geonames.bngeonames.Preferences
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.Data
 import com.google.android.gms.location.*
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_data.view.*
 import okhttp3.*
 import java.io.IOException
@@ -37,11 +38,11 @@ class DataFragment : Fragment() {
     }
 
     private fun initialize() {
-        url = Preferences.getSharedPrefrences(context,Constants.SERVER_LIST,
+        url = Preferences.get(context,Constants.SERVER_LIST,
                 Constants.DEFAULT_SERVER_URL) + Constants.DATA_URL
         setLocationParams()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-        if(Preferences.getSharedPrefrences(context,
+        if(Preferences.get(context,
                 Constants.PERMISSION_FOR_LOCATION_GRANTED,false)) {
             try {
                 fusedLocationClient.requestLocationUpdates(locationRequest,locationCallback,null)
@@ -80,8 +81,8 @@ class DataFragment : Fragment() {
             longitude = view.et_data_longitude.text.toString().toDouble()
             latitude = view.et_data_latitude.text.toString().toDouble()
             altitude = view.et_data_altiutde.text.toString().toDouble()
-            var data : Data = Data(userKey,appKey,locationName,longitude,latitude,altitude,locationType)
-            post(url, data.getJSON())
+            val data = Data(userKey,appKey,locationName,longitude,latitude,altitude,locationType)
+            post(url, Gson().toJson(data))
         }
 
         return view

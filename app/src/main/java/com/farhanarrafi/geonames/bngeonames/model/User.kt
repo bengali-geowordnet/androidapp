@@ -11,8 +11,4 @@ public class User{
         this.email = email
         this.phone = phone
     }
-
-    fun getJSON(): String {
-        return "{'name' : $name, 'email' : $email, 'phone' : $phone }"
-    }
 }

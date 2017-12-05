@@ -85,12 +85,12 @@ class DataPushActivity : AppCompatActivity() {
             Constants.PERMISSION_FOR_LOCATION -> {
                 if (grantResults.isNotEmpty()
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Preferences.setSharedPrefrences(this,
+                    Preferences.set(this,
                             Constants.PERMISSION_FOR_LOCATION_GRANTED,true)
                     Snackbar.make(mainContent,getString(R.string.location_persmission_granted),
                             Snackbar.LENGTH_SHORT).show()
                 } else {
-                    Preferences.setSharedPrefrences(this,
+                    Preferences.set(this,
                             Constants.PERMISSION_FOR_LOCATION_GRANTED,false)
                     Snackbar.make(mainContent,getString(R.string.location_permission_denied),
                             Snackbar.LENGTH_SHORT).show()

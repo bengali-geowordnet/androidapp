@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.User
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
@@ -33,8 +34,8 @@ class MainActivity : AppCompatActivity() {
 
     fun sendRequest(view: View) {
 
-        var user = User(tv_name.text.toString(), tv_type.text.toString(), tv_email.text.toString())
-        post(url, user.getJSON())
+        val user = User(tv_name.text.toString(), tv_type.text.toString(), tv_email.text.toString())
+        post(url, Gson().toJson(user))
 
     }
 

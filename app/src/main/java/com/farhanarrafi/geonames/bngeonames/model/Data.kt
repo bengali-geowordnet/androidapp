@@ -18,18 +18,4 @@ class Data {
         this.altitude = altitude
         this.type = type
     }
-
-
-    fun getJSON(): String {
-        return "{ 'appKey': '$appKey', " +
-                "'userKey': '$userKey'," +
-                "'location': { 'name': '$name', " +
-                "'longitude': $longitude, " +
-                "'latitude': $latitude, " +
-                "'altitude': $altitude, " +
-                "'type': '$type' }, " +
-                "'region': { " +
-                "'name': '', " +
-                "'type': '' } }"
-    }
 }
