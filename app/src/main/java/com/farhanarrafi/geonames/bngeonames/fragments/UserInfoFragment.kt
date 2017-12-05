@@ -24,7 +24,7 @@ class UserInfoFragment : Fragment(), ResponseCallback {
         if (arguments != null) {
         }
         url = Preferences.get(context, Constants.SERVER_LIST,
-                Constants.DEFAULT_SERVER_URL) + Constants.DATA_URL
+                Constants.DEFAULT_SERVER_URL) + Constants.USER_URL
     }
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
