@@ -15,8 +15,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.farhanarrafi.geonames.bngeonames.Constants
-import com.farhanarrafi.geonames.bngeonames.Preferences
+import com.farhanarrafi.geonames.bngeonames.utility.Constants
+import com.farhanarrafi.geonames.bngeonames.utility.Preferences
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.fragments.AppInfoFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.DataFragment

@@ -1,4 +1,4 @@
-package com.farhanarrafi.geonames.bngeonames
+package com.farhanarrafi.geonames.bngeonames.utility
 
 
 interface ResponseCallback {

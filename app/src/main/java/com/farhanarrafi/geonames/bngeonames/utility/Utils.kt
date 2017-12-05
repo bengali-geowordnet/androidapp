@@ -1,4 +1,4 @@
-package com.farhanarrafi.geonames.bngeonames
+package com.farhanarrafi.geonames.bngeonames.utility
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
@@ -12,7 +12,7 @@ class Utils {
 
 
         fun requestTokenFromServer(url: String, json: String, responseCallback: ResponseCallback) {
-            this.responseCallback = responseCallback
+            Companion.responseCallback = responseCallback
             var body: RequestBody = RequestBody.create(JSON, json)
             var request: Request = Request.Builder()
                     .url(url)
@@ -31,7 +31,7 @@ class Utils {
             override fun onResponse(call: Call?, response: Response?) {
                 val responseString = response!!.body()!!.string()
                 val gson = Gson()
-                val token: String = gson.fromJson(responseString, JsonObject::class.java).asJsonObject.get("token").toString().replace("\"", "")
+                val token: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("token").toString().replace("\"", "")
                 responseCallback.setToken(token)
             }
         }

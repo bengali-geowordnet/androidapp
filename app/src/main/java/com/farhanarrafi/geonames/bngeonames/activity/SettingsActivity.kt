@@ -12,7 +12,7 @@ import android.preference.*
 import android.support.v4.app.NavUtils
 import android.text.TextUtils
 import android.view.MenuItem
-import com.farhanarrafi.geonames.bngeonames.Constants
+import com.farhanarrafi.geonames.bngeonames.utility.Constants
 import com.farhanarrafi.geonames.bngeonames.R
 
 /**

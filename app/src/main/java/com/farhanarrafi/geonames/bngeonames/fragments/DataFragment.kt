@@ -7,10 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.farhanarrafi.geonames.bngeonames.Constants
-import com.farhanarrafi.geonames.bngeonames.Preferences
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.Data
+import com.farhanarrafi.geonames.bngeonames.utility.Constants
+import com.farhanarrafi.geonames.bngeonames.utility.Preferences
 import com.google.android.gms.location.*
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_data.view.*
@@ -38,7 +38,7 @@ class DataFragment : Fragment() {
     }
 
     private fun initialize() {
-        url = Preferences.get(context,Constants.SERVER_LIST,
+        url = Preferences.get(context, Constants.SERVER_LIST,
                 Constants.DEFAULT_SERVER_URL) + Constants.DATA_URL
         setLocationParams()
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
@@ -73,6 +73,9 @@ class DataFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view :View = inflater!!.inflate(R.layout.fragment_data, container, false)
+        view.et_data_longitude.text = (90.405572).toString()
+        view.et_data_latitude.text = (23.794437).toString()
+        view.et_data_altiutde.text = (5.1).toString()
         view.button.setOnClickListener {
             val userKey = view.et_user_key.text.toString()
             val appKey = view.et_app_key.text.toString()

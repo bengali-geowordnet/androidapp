@@ -11,6 +11,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.farhanarrafi.geonames.bngeonames.*
 import com.farhanarrafi.geonames.bngeonames.model.User
+import com.farhanarrafi.geonames.bngeonames.utility.Constants
+import com.farhanarrafi.geonames.bngeonames.utility.Preferences
+import com.farhanarrafi.geonames.bngeonames.utility.ResponseCallback
+import com.farhanarrafi.geonames.bngeonames.utility.Utils
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_user_info.view.*
 

@@ -55,35 +55,8 @@
         android:gravity="center|center_vertical"
         android:hint="@string/latitude"
         android:text="@string/altitude"
-        app:layout_constraintEnd_toStartOf="@+id/tv_data_elevation"
-        app:layout_constraintStart_toEndOf="@+id/tv_data_altitude"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/tv_data_elevation"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/elevation"
-        android:textAlignment="gravity"
-        app:layout_constraintEnd_toStartOf="@+id/et_data_elevation"
-        app:layout_constraintStart_toEndOf="@+id/et_data_altiutde"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/et_data_elevation"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="center|center_vertical"
-        android:text="@string/elevation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_data_elevation"
+        app:layout_constraintStart_toEndOf="@+id/tv_data_altitude"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
