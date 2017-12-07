@@ -46,12 +46,12 @@ class AppInfoFragment : Fragment(), ResponseCallback {
         return view
     }
 
-    override fun setToken(token: String) {
-        Preferences.set(context, "APP_KEY", token)
+    override fun setResult(result: String) {
+        Preferences.set(context, Constants.APP_KEY, result)
         Handler(Looper.getMainLooper()).post({
-            tvToken.text = token
+            tvToken.text = result
         })
-        Snackbar.make(view!!, token, Snackbar.LENGTH_SHORT)
+        Snackbar.make(view!!, result, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
     }
 

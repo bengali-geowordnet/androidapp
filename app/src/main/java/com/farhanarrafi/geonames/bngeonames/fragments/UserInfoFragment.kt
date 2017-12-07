@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.farhanarrafi.geonames.bngeonames.*
+import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.User
 import com.farhanarrafi.geonames.bngeonames.utility.Constants
 import com.farhanarrafi.geonames.bngeonames.utility.Preferences
@@ -45,12 +45,12 @@ class UserInfoFragment : Fragment(), ResponseCallback {
         return view
     }
 
-    override fun setToken(token: String) {
-        Preferences.set(context, "USER_KEY", token)
+    override fun setResult(result: String) {
+        Preferences.set(context, Constants.USER_KEY, result)
         Handler(Looper.getMainLooper()).post({
-            tvToken.text = token
+            tvToken.text = result
         })
-        Snackbar.make(view!!, token, Snackbar.LENGTH_SHORT)
+        Snackbar.make(view!!, result, Snackbar.LENGTH_SHORT)
                 .setAction("Action", null).show()
     }
 

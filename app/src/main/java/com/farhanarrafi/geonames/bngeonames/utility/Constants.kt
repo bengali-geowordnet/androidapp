@@ -10,6 +10,8 @@ class Constants {
         val APP_URL: String = "api/app/"
         val USER_URL: String = "api/user/"
         val DATA_URL: String = "api/data/"
+        val APP_KEY: String = "com.farhanarrafi.geonames.application_key"
+        val USER_KEY: String = "com.farhanarrafi.geonames.user_key"
         var PERMISSION_FOR_LOCATION: Int = 1005
         var PERMISSION_FOR_LOCATION_GRANTED: String = "permission_for_location_granted"
 

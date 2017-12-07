@@ -1,24 +1,28 @@
 package com.farhanarrafi.geonames.bngeonames.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.model.Data
 import com.farhanarrafi.geonames.bngeonames.utility.Constants
 import com.farhanarrafi.geonames.bngeonames.utility.Preferences
+import com.farhanarrafi.geonames.bngeonames.utility.ResponseCallback
+import com.farhanarrafi.geonames.bngeonames.utility.Utils
 import com.google.android.gms.location.*
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_data.view.*
-import okhttp3.*
-import java.io.IOException
+import okhttp3.MediaType
+import okhttp3.OkHttpClient
 
 
-class DataFragment : Fragment() {
+class DataFragment : Fragment(), ResponseCallback {
 
     val JSON: MediaType? = MediaType.parse("application/json; charset=utf-8")
     private  lateinit var fusedLocationClient: FusedLocationProviderClient
@@ -29,6 +33,7 @@ class DataFragment : Fragment() {
     private var altitude: Double = 0.0
     var url: String = ""
     val client = OkHttpClient()
+    lateinit var tv_result:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,9 +78,12 @@ class DataFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view :View = inflater!!.inflate(R.layout.fragment_data, container, false)
+        view.et_user_key.text = Preferences.get(context,Constants.USER_KEY,"empty")
+        view.et_app_key.text = Preferences.get(context,Constants.APP_KEY,"empty")
         view.et_data_longitude.text = (90.405572).toString()
         view.et_data_latitude.text = (23.794437).toString()
         view.et_data_altiutde.text = (5.1).toString()
+        tv_result = view.tv_data_result
         view.button.setOnClickListener {
             val userKey = view.et_user_key.text.toString()
             val appKey = view.et_app_key.text.toString()
@@ -85,10 +93,18 @@ class DataFragment : Fragment() {
             latitude = view.et_data_latitude.text.toString().toDouble()
             altitude = view.et_data_altiutde.text.toString().toDouble()
             val data = Data(userKey,appKey,locationName,longitude,latitude,altitude,locationType)
-            post(url, Gson().toJson(data))
+            Utils.sendDataToServer(url, Gson().toJson(data), this)
         }
 
         return view
+    }
+
+    override fun setResult(result: String) {
+        Handler(Looper.getMainLooper()).post({
+            tv_result.text = result
+        })
+        Snackbar.make(view!!, result, Snackbar.LENGTH_SHORT)
+                .setAction("Action", null).show()
     }
 
     companion object {
@@ -102,27 +118,4 @@ class DataFragment : Fragment() {
             return fragment
         }
     }
-
-    fun post(url: String, json: String) {
-        var body: RequestBody = RequestBody.create(JSON, json)
-        var request: Request = Request.Builder()
-                .url(url)
-                .post(body)
-                .build()
-
-        client.newCall(request).enqueue(callback);
-    }
-
-    var callback: Callback = object : Callback {
-        override fun onFailure(call: Call?, e: IOException) {
-            e.printStackTrace()
-        }
-
-        override fun onResponse(call: Call?, response: Response?) {
-            Log.d("POST", response.toString())
-            Snackbar.make(view!!, "response.toString()", Snackbar.LENGTH_SHORT)
-                    .setAction("Action", null).show()
-        }
-    }
-
 }
