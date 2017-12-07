@@ -3,6 +3,7 @@ package com.farhanarrafi.geonames.bngeonames.activity
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TabLayout
@@ -15,12 +16,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.farhanarrafi.geonames.bngeonames.utility.Constants
-import com.farhanarrafi.geonames.bngeonames.utility.Preferences
 import com.farhanarrafi.geonames.bngeonames.R
 import com.farhanarrafi.geonames.bngeonames.fragments.AppInfoFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.DataFragment
 import com.farhanarrafi.geonames.bngeonames.fragments.UserInfoFragment
+import com.farhanarrafi.geonames.bngeonames.utility.Constants
+import com.farhanarrafi.geonames.bngeonames.utility.Preferences
 import kotlinx.android.synthetic.main.activity_data_push.*
 
 
@@ -101,10 +102,15 @@ class DataPushActivity : AppCompatActivity() {
     }
 
     private fun checkForPermissions() {
+        if(Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+            Preferences.set(this,
+                    Constants.PERMISSION_FOR_LOCATION_GRANTED,true)
+            Snackbar.make(mainContent,"Location Permission Granted at install. Getting location Data.",
+                    Snackbar.LENGTH_SHORT).show()
+        }
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-
             if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
 

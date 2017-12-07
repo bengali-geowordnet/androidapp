@@ -37,7 +37,7 @@
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="start|center_vertical"
         android:text="@string/altitude"
         android:textAlignment="gravity"
@@ -51,11 +51,11 @@
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:gravity="center|center_vertical"
         android:hint="@string/latitude"
         android:text="@string/altitude"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_request"
         app:layout_constraintStart_toEndOf="@+id/tv_data_altitude"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -220,7 +220,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="270dp" />
+        app:layout_constraintGuide_begin="312dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -234,14 +234,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="163dp" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="283dp" />
+        app:layout_constraintGuide_end="244dp" />
+
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <Button
+        android:id="@+id/button_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Request"
+        app:layout_constraintEnd_toStartOf="@+id/button_stop"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
 </android.support.constraint.ConstraintLayout>
 
