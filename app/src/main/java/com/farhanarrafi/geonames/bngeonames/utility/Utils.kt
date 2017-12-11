@@ -23,7 +23,7 @@ class Utils {
 
             override fun onResponse(call: Call?, response: Response?) {
                 if(response!!.isSuccessful) {
-                    val responseString = response!!.body()!!.string()
+                    val responseString = response.body()!!.string()
                     val gson = Gson()
                     try {
                         val status: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("status").toString().replace("\"", "")
@@ -33,11 +33,14 @@ class Utils {
                         Log.e("response", response.toString())
                     }
                 } else if(response.code() in 400..499) {
-                    responseCallback.setError("You made an error: response.code()")
+                    responseCallback.setError("You made an error: " + response.code())
+                    Log.e("response", response.toString())
                 } else if(response.code() in 500..599) {
-                    responseCallback.setError("Server Error: response.code()")
+                    responseCallback.setError("Server Error: " + response.code())
+                    Log.e("response", response.toString())
                 } else {
                     responseCallback.setError(response.toString())
+                    Log.e("response", response.toString())
                 }
             }
         }
@@ -54,7 +57,7 @@ class Utils {
 
             override fun onResponse(call: Call?, response: Response?) {
                 if(response!!.isSuccessful) {
-                    val responseString = response!!.body()!!.string()
+                    val responseString = response.body()!!.string()
                     val gson = Gson()
                     try {
                         val token: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("token").toString().replace("\"", "")
@@ -64,11 +67,14 @@ class Utils {
                         Log.e("response", response.toString())
                     }
                 } else if(response.code() in 400..499) {
-                    responseCallback.setError("You made an error: response.code()")
+                    responseCallback.setError("You made an error: " + response.code())
+                    Log.e("response", response.toString())
                 } else if(response.code() in 500..599) {
-                    responseCallback.setError("Server Error: response.code()")
+                    responseCallback.setError("Server Error: " + response.code())
+                    Log.e("response", response.toString())
                 } else {
                     responseCallback.setError(response.toString())
+                    Log.e("response", response.toString())
                 }
             }
         }
