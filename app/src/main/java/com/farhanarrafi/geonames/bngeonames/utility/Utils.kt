@@ -1,5 +1,6 @@
 package com.farhanarrafi.geonames.bngeonames.utility
 
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import okhttp3.*
@@ -21,10 +22,23 @@ class Utils {
             }
 
             override fun onResponse(call: Call?, response: Response?) {
-                val responseString = response!!.body()!!.string()
-                val gson = Gson()
-                val status: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("status").toString().replace("\"", "")
-                responseCallback.setResult(status)
+                if(response!!.isSuccessful) {
+                    val responseString = response!!.body()!!.string()
+                    val gson = Gson()
+                    try {
+                        val status: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("status").toString().replace("\"", "")
+                        responseCallback.setResult(status)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        Log.e("response", response.toString())
+                    }
+                } else if(response.code() in 400..499) {
+                    responseCallback.setError("You made an error: response.code()")
+                } else if(response.code() in 500..599) {
+                    responseCallback.setError("Server Error: response.code()")
+                } else {
+                    responseCallback.setError(response.toString())
+                }
             }
         }
 
@@ -39,10 +53,23 @@ class Utils {
             }
 
             override fun onResponse(call: Call?, response: Response?) {
-                val responseString = response!!.body()!!.string()
-                val gson = Gson()
-                val token: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("token").toString().replace("\"", "")
-                responseCallback.setResult(token)
+                if(response!!.isSuccessful) {
+                    val responseString = response!!.body()!!.string()
+                    val gson = Gson()
+                    try {
+                        val token: String = gson.fromJson(responseString!!, JsonObject::class.java).asJsonObject.get("token").toString().replace("\"", "")
+                        responseCallback.setResult(token)
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        Log.e("response", response.toString())
+                    }
+                } else if(response.code() in 400..499) {
+                    responseCallback.setError("You made an error: response.code()")
+                } else if(response.code() in 500..599) {
+                    responseCallback.setError("Server Error: response.code()")
+                } else {
+                    responseCallback.setError(response.toString())
+                }
             }
         }
 

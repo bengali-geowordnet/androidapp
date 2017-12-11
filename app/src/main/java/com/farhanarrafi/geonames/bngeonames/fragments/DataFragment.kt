@@ -119,6 +119,11 @@ class DataFragment : Fragment(), ResponseCallback {
                 .setAction("Action", null).show()
     }
 
+    override fun setError(error: String) {
+        Snackbar.make(view!!, error, Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+    }
+
     companion object {
         /**
          * @return A new instance of fragment DataFragment.
