@@ -7,10 +7,10 @@
         android:title="@string/pref_title_use_real_location" />
 
     <ListPreference
-        android:defaultValue="1"
+        android:defaultValue="@string/openshift_server"
         android:entries="@array/pref_server_address_titles"
         android:entryValues="@array/pref_server_address_values"
-        android:key="server_list"
+        android:key="pref_key_default_server_url"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/select_server_for_testing" />

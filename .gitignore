@@ -32,7 +32,3 @@ captures/
 # Google Services (e.g. APIs or Firebase)
 google-services.json
 .idea/
-gradle.properties
-gradle/
-gradlew
-gradlew.bat

@@ -36,16 +36,18 @@
     <string name="pref_description_use_real_location">
         Please enable it only if you are under open sky, where GPS is available.
     </string>
+    <string name="openshift_server" translatable="false">http://geocrowdsource-geosource.193b.starter-ca-central-1.openshiftapps.com/</string>
+    <string name="local_server" translatable="false">http://192.168.19.77:8899/</string>
 
 
     <string name="select_server_for_testing">Select server for testing application</string>
     <string-array name="pref_server_address_titles">
-        <item>http://127.0.0.1:8899</item>
-        <item>http://geocrowdsource-geosource.193b.starter-ca-central-1.openshiftapps.com</item>
+        <item>Local Server</item>
+        <item>Openshift Server</item>
     </string-array>
     <string-array name="pref_server_address_values">
-        <item>1</item>
-        <item>2</item>
+        <item>@string/local_server</item>
+        <item>@string/openshift_server</item>
     </string-array>
 
     <!-- Example settings for Data & Sync -->

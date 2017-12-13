@@ -46,8 +46,8 @@ class DataFragment : Fragment(), ResponseCallback {
     }
 
     private fun initialize() {
-        url = Preferences.get(context, Constants.SERVER_LIST,
-                Constants.DEFAULT_SERVER_URL) + Constants.DATA_URL
+        url = Preferences.get(context, Constants.PREF_KEY_DEFAULT_SERVER_URL,
+                getString(R.string.openshift_server)) + Constants.DATA_URL
     }
 
     override fun onResume() {
