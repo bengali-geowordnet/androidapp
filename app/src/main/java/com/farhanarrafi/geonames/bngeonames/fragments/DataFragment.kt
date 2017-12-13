@@ -101,12 +101,6 @@ class DataFragment : Fragment(), ResponseCallback {
             val data = Data(userKey,appKey,locationName,longitude,latitude,altitude,locationType)
             Utils.sendDataToServer(url, Gson().toJson(data), this)
         }
-        view.button_stop.setOnClickListener {
-            stopLocationUpdates()
-        }
-        view.button_request.setOnClickListener {
-            requestLocationUpdates()
-        }
 
         return view
     }

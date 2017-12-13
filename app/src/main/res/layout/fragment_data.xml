@@ -4,7 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/tv_data_longitude3"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/single_line_text_height"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/slash"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_data_altiutde"
+        app:layout_constraintHorizontal_weight=".25"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/tv_location_type"
@@ -32,43 +46,16 @@
         app:layout_constraintTop_toTopOf="@+id/guideline4" />
 
     <TextView
-        android:id="@+id/tv_data_altitude"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/altitude"
-        android:textAlignment="gravity"
-        app:layout_constraintEnd_toStartOf="@+id/et_data_altiutde"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
         android:id="@+id/et_data_altiutde"
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:hint="@string/latitude"
         android:text="@string/altitude"
-        app:layout_constraintEnd_toStartOf="@+id/button_request"
-        app:layout_constraintStart_toEndOf="@+id/tv_data_altitude"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <TextView
-        android:id="@+id/tv_user_key"
-        android:layout_width="@dimen/label_width"
-        android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/user_key"
-        android:textAlignment="gravity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/et_user_key"
@@ -76,24 +63,13 @@
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:ems="100"
         android:gravity="center|center_vertical"
-        android:hint="@string/user_key"
+        android:text="@string/user_key"
         android:textAlignment="gravity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_user_key"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_app_key"
-        android:layout_width="@dimen/label_width"
-        android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:gravity="start|center_vertical"
-        android:text="@string/app_key"
-        android:textAlignment="gravity"
+        app:layout_constraintEnd_toStartOf="@+id/et_app_key"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_user_key" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/et_app_key"
@@ -101,25 +77,24 @@
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:ems="100"
         android:gravity="center|center_vertical"
         android:text="@string/app_key"
         android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_app_key"
-        app:layout_constraintTop_toBottomOf="@+id/et_user_key" />
+        app:layout_constraintStart_toEndOf="@+id/et_user_key"
+        tools:layout_editor_absoluteY="1dp" />
 
     <TextView
         android:id="@+id/tv_location_name"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/location_name"
         android:textAlignment="gravity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_app_key" />
+        app:layout_constraintTop_toBottomOf="@+id/et_user_key" />
 
     <EditText
         android:id="@+id/et_location_name"
@@ -136,17 +111,14 @@
 
     <TextView
         android:id="@+id/tv_data_longitude"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
-        android:text="@string/longitude"
+        android:text="@string/slash"
         android:textAlignment="gravity"
         app:layout_constraintEnd_toStartOf="@+id/et_data_longitude"
-        app:layout_constraintHorizontal_weight=".25"
-        app:layout_constraintStart_toEndOf="@+id/et_data_latitude"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
@@ -154,26 +126,21 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:text="@string/longitude"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_data_longitude3"
         app:layout_constraintHorizontal_weight=".25"
-        app:layout_constraintStart_toEndOf="@+id/tv_data_longitude"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/tv_data_latitude"
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
-        android:text="@string/latitude"
+        android:text="@string/latLongAlt"
         android:textAlignment="gravity"
-        app:layout_constraintEnd_toStartOf="@+id/et_data_latitude"
         app:layout_constraintHorizontal_weight=".25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
@@ -197,7 +164,9 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/title_activity_data_push"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -206,10 +175,10 @@
     <TextView
         android:id="@+id/tv_data_result"
         android:layout_width="200dp"
-        android:layout_height="17dp"
+        android:layout_height="18dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -220,48 +189,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="312dp" />
+        app:layout_constraintGuide_begin="183dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="124dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.37" />
+        app:layout_constraintGuide_begin="88dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="244dp" />
+        app:layout_constraintGuide_percent="0.27" />
 
-    <Button
-        android:id="@+id/button_stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/data_map_fragment"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Stop"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
-    <Button
-        android:id="@+id/button_request"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Request"
-        app:layout_constraintEnd_toStartOf="@+id/button_stop"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_result" />
 
 </android.support.constraint.ConstraintLayout>
 
