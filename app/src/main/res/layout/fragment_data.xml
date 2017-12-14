@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/slash"
@@ -25,6 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/label_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/location_type"
@@ -39,6 +41,7 @@
         android:layout_width="266dp"
         android:layout_height="@dimen/editText_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:hint="@string/location_type"
         android:inputType="text"
@@ -50,6 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:hint="@string/latitude"
@@ -83,7 +87,7 @@
         android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_user_key"
-        tools:layout_editor_absoluteY="1dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_location_name"
@@ -114,6 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="start|center_vertical"
         android:text="@string/slash"
@@ -126,6 +131,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/single_line_text_height"
         android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center|center_vertical"
         android:text="@string/longitude"
@@ -204,22 +210,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.27" />
-
-    <fragment
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:map="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/data_map_fragment"
-        android:name="com.google.android.gms.maps.MapFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_data_result" />
 
 </android.support.constraint.ConstraintLayout>
 

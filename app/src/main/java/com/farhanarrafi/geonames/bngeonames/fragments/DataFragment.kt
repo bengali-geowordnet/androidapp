@@ -75,6 +75,7 @@ class DataFragment : Fragment(), ResponseCallback {
         locationRequest = LocationRequest()
         locationRequest.interval = 1800000
         locationRequest.fastestInterval = 30000
+        locationRequest.numUpdates = 5
         locationRequest.priority = LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY
     }
 
